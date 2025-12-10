@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Encuesta - Proyecto</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1 id="title">Formulario de opinión</h1>
+    <p id="description">Queremos conocer tu experiencia. Completa el formulario y envíanos tus comentarios.</p>
+
+    <form id="survey-form" action="#" method="post">
+
+      <div>
+        <label id="name-label" for="name">Nombre completo</label>
+        <input id="name" name="name" type="text" placeholder="Ingresa tu nombre" required>
+      </div>
+
+      <div>
+        <label id="email-label" for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" placeholder="ejemplo@dominio.com" required>
+      </div>
+
+      <div>
+        <label id="number-label" for="number">Edad (años)</label>
+        <input id="number" name="age" type="number" min="10" max="99" placeholder="Ingresa tu edad (10-99)">
+      </div>
+
+      <div>
+        <label for="dropdown">¿Con qué frecuencia usas nuestro servicio?</label>
+        <select id="dropdown" name="frequency">
+          <option value="">-- Selecciona una opción --</option>
+          <option value="diario">Diario</option>
+          <option value="semanal">Semanal</option>
+          <option value="mensual">Mensual</option>
+        </select>
+      </div>
+
+      <div>
+        <label>¿Recomendarías nuestro servicio a un amigo?</label>
+        <div class="radio-group">
+          <label class="inline"><input type="radio" name="recommend" value="si"> Sí</label>
+          <label class="inline"><input type="radio" name="recommend" value="no"> No</label>
+          <label class="inline"><input type="radio" name="recommend" value="talvez"> Tal vez</label>
+        </div>
+      </div>
+
+      <div>
+        <label>¿Qué características usas? (marca todas las que apliquen)</label>
+        <div class="checkbox-group">
+          <label class="inline"><input type="checkbox" name="features" value="chat"> Chat</label>
+          <label class="inline"><input type="checkbox" name="features" value="reportes"> Reportes</label>
+          <label class="inline"><input type="checkbox" name="features" value="integraciones"> Integraciones</label>
+        </div>
+      </div>
+
+      <div>
+        <label for="comments">Comentarios adicionales</label>
+        <textarea id="comments" name="comments" rows="5" placeholder="Escribe aquí tus sugerencias o impresiones..."></textarea>
+      </div>
+
+      <div>
+        <button id="submit" type="submit">Enviar encuesta</button>
+      </div>
+
+    </form>
+  </div>
+</body>
+</html>
+
+
