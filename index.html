@@ -1,75 +1,93 @@
-
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Encuesta - Proyecto</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Documentación Técnica - Proyecto</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1 id="title">Formulario de opinión</h1>
-    <p id="description">Queremos conocer tu experiencia. Completa el formulario y envíanos tus comentarios.</p>
+  <nav id="navbar">
+    <header>Guía de la API - Mi Proyecto</header>
+    <a class="nav-link" href="#Introducción">Introducción</a>
+    <a class="nav-link" href="#Instalación_y_Requisitos">Instalación y Requisitos</a>
+    <a class="nav-link" href="#Conceptos_Clave">Conceptos Clave</a>
+    <a class="nav-link" href="#Ejemplos_de_Código">Ejemplos de Código</a>
+    <a class="nav-link" href="#Referencias">Referencias</a>
+  </nav>
 
-    <form id="survey-form" action="#" method="post">
+  <main id="main-doc">
+    <section class="main-section" id="Introducción">
+      <header>Introducción</header>
+      <p>Esta documentación explica cómo utilizar la API pública de Mi Proyecto.</p>
+      <p>Describe los conceptos principales, ejemplos y recomendaciones de integración.</p>
+      <p>Objetivo: ofrecer una referencia rápida para desarrolladores.</p>
+      <p>Requisitos mínimos y pasos para comenzar se detallan en la siguiente sección.</p>
+      <p>Si necesita más ayuda, consulte la sección de Referencias al final.</p>
+    </section>
 
-      <div>
-        <label id="name-label" for="name">Nombre completo</label>
-        <input id="name" name="name" type="text" placeholder="Ingresa tu nombre" required>
-      </div>
+    <section class="main-section" id="Instalación_y_Requisitos">
+      <header>Instalación y Requisitos</header>
+      <p>Antes de instalar, verifique que su entorno cumpla los requisitos: Node.js >= 14, npm.</p>
+      <p>Descargue el paquete desde el repositorio oficial o instálelo vía npm.</p>
+      <p>Ejecute <code>npm install mi-proyecto</code> para instalar la dependencia.</p>
+      <p>Configure las variables de entorno: <code>API_KEY</code>, <code>API_URL</code>.</p>
+      <p>Reinicie su servidor después de aplicar las variables de entorno.</p>
+      <ul>
+        <li>Node.js (recomendado): 14+</li>
+        <li>npm o yarn</li>
+        <li>Acceso a Internet</li>
+        <li>Clave de API válida</li>
+        <li>Entorno de ejecución compatible</li>
+      </ul>
+    </section>
 
-      <div>
-        <label id="email-label" for="email">Correo electrónico</label>
-        <input id="email" name="email" type="email" placeholder="ejemplo@dominio.com" required>
-      </div>
+    <section class="main-section" id="Conceptos_Clave">
+      <header>Conceptos Clave</header>
+      <p>La API utiliza recursos REST y responde con JSON en todas las rutas.</p>
+      <p>Los objetos principales son: <code>user</code>, <code>session</code> y <code>resource</code>.</p>
+      <p>Autenticación basada en tokens: incluya <code>Authorization: Bearer &lt;token&gt;</code>.</p>
+      <p>Las rutas siguen convenciones CRUD: GET, POST, PUT, DELETE.</p>
+      <p>Para manejar errores, revisa los códigos HTTP devueltos por la API.</p>
+    </section>
 
-      <div>
-        <label id="number-label" for="number">Edad (años)</label>
-        <input id="number" name="age" type="number" min="10" max="99" placeholder="Ingresa tu edad (10-99)">
-      </div>
+    <section class="main-section" id="Ejemplos_de_Código">
+      <header>Ejemplos de Código</header>
+      <p>A continuación hay ejemplos básicos que muestran cómo llamar a la API.</p>
+      <p>Ejemplo en JavaScript usando fetch:</p>
+      <code>fetch('/api/resource', { headers: { Authorization: 'Bearer TOKEN' }})</code>
+      <p>Ejemplo en cURL:</p>
+      <code>curl -H "Authorization: Bearer TOKEN" https://api.example.com/resource</code>
+      <p>Ejemplo de creación de recurso (POST):</p>
+      <code>POST /api/resource { "name": "nuevo" }</code>
+      <p>Incluye manejo de respuestas y validación local antes de enviar peticiones.</p>
+    </section>
 
-      <div>
-        <label for="dropdown">¿Con qué frecuencia usas nuestro servicio?</label>
-        <select id="dropdown" name="frequency">
-          <option value="">-- Selecciona una opción --</option>
-          <option value="diario">Diario</option>
-          <option value="semanal">Semanal</option>
-          <option value="mensual">Mensual</option>
-        </select>
-      </div>
+    <section class="main-section" id="Referencias">
+      <header>Referencias</header>
+      <p>Documentación oficial de dependencias externas y enlaces útiles.</p>
+      <p>Políticas de uso, límites de tasa y contacto para soporte.</p>
+      <p>Changelog y notas de la versión se publican en el repositorio.</p>
+      <p>Para ejemplos avanzados, consulte la carpeta /examples en el repo.</p>
+      <p>Gracias por utilizar Mi Proyecto — contribuciones son bienvenidas.</p>
+      <ul>
+        <li>Repositorio oficial</li>
+        <li>Guía de estilo</li>
+        <li>Formato de mensajes de error</li>
+        <li>Política de privacidad</li>
+        <li>Soporte y contacto</li>
+      </ul>
+    </section>
+  </main>
 
-      <div>
-        <label>¿Recomendarías nuestro servicio a un amigo?</label>
-        <div class="radio-group">
-          <label class="inline"><input type="radio" name="recommend" value="si"> Sí</label>
-          <label class="inline"><input type="radio" name="recommend" value="no"> No</label>
-          <label class="inline"><input type="radio" name="recommend" value="talvez"> Tal vez</label>
-        </div>
-      </div>
-
-      <div>
-        <label>¿Qué características usas? (marca todas las que apliquen)</label>
-        <div class="checkbox-group">
-          <label class="inline"><input type="checkbox" name="features" value="chat"> Chat</label>
-          <label class="inline"><input type="checkbox" name="features" value="reportes"> Reportes</label>
-          <label class="inline"><input type="checkbox" name="features" value="integraciones"> Integraciones</label>
-        </div>
-      </div>
-
-      <div>
-        <label for="comments">Comentarios adicionales</label>
-        <textarea id="comments" name="comments" rows="5" placeholder="Escribe aquí tus sugerencias o impresiones..."></textarea>
-      </div>
-
-      <div>
-        <button id="submit" type="submit">Enviar encuesta</button>
-      </div>
-
-    </form>
-  </div>
+  <script>
+    document.querySelectorAll('.nav-link').forEach(function(link){
+      link.addEventListener('click', function(){
+        var destId = this.getAttribute('href').substring(1);
+        var dest = document.getElementById(destId);
+        if(dest) dest.focus();
+      });
+    });
+  </script>
 </body>
 </html>
-
-
